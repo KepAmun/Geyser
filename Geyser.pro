@@ -12,8 +12,6 @@ TEMPLATE = app
 
 QMAKE_CXXFLAGS += -std=c++0x
 
-INCLUDEPATH += ../GLCommon/
-
 SOURCES += \
     main.cpp\
     Vector3f.cpp \
