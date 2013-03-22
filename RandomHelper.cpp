@@ -3,15 +3,6 @@
 
 RandomHelper::InitRandom RandomHelper::ir;
 
-RandomHelper::RandomHelper(void)
-{
-}
-
-
-RandomHelper::~RandomHelper(void)
-{
-}
-
 
 int RandomHelper::GetInt(int max)
 {

@@ -19,8 +19,6 @@ private:
     static InitRandom ir;
 
 public:
-    RandomHelper();
-    ~RandomHelper();
 
     static int GetInt(int max);
     static int GetInt(int min, int max);
