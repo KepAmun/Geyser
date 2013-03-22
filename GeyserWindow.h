@@ -1,8 +1,8 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef GEYSERWINDOW_H
+#define GEYSERWINDOW_H
 
 #include <QMainWindow>
-#include "geyserView.h"
+#include "ParticleEngineView.h"
 
 
 namespace Ui {
@@ -22,10 +22,10 @@ public slots:
 
 private:
     Ui::GeyserWindow *ui;
-    geyserView* m_geyserView;
+    ParticleEngineView* m_particleEngineView;
 
 private slots:
     void onStatusUpdated(float fps, int count);
 };
 
-#endif // MAINWINDOW_H
+#endif // GEYSERWINDOW_H

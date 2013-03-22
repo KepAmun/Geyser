@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include "randomhelper.h"
-#include "particle.h"
+#include "RandomHelper.h"
+#include "Particle.h"
 
 
 
@@ -95,7 +95,7 @@ void Particle::Render()
     float size = (m_sizeEnd-m_sizeStart) * ageRatio + m_sizeStart;
 
     //gluDisk(m_quadric,0,size/2,10,1);
-    gluSphere(m_quadric,size/2,8,4);
+    gluSphere(m_quadric, size/2, 8, 4);
 
     //glBegin(GL_TRIANGLES);
     //{

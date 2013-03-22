@@ -6,7 +6,7 @@
 #include <GL/gl.h>
 #include <QDateTime>
 
-#include "particle.h"
+#include "Particle.h"
 
 using namespace std;
 

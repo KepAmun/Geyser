@@ -1,8 +1,9 @@
 #pragma once
+
 class Vector3f
 {
 private:
-    float m_v[3];// m_x, m_y, m_z;
+    float m_v[3];
 
 public:
     Vector3f(void);

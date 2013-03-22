@@ -1,14 +1,14 @@
-#ifndef GEYSERVIEW_H
-#define GEYSERVIEW_H
+#ifndef PARTICLEENGINEVIEW_H
+#define PARTICLEENGINEVIEW_H
 
 #include <QGLWidget>
 #include <GL/glu.h>
 #include <QTimer>
 #include <QElapsedTimer>
 #include <QMouseEvent>
-#include "particleengine.h"
+#include "ParticleEngine.h"
 
-class geyserView : public QGLWidget
+class ParticleEngineView : public QGLWidget
 {
     Q_OBJECT
 
@@ -43,8 +43,11 @@ private:
     qint64 m_lastFpsUpdate;
     int m_frameCount;
 
+
+    bool m_showBox, m_showAxes;
+
 public:
-    explicit geyserView(QGLFormat format, QWidget *parent = 0);
+    explicit ParticleEngineView(QGLFormat format, QWidget *parent = 0);
     void setConfig(ParticleEngine::Configuration config){ m_particleEngine.setConfig(config); }
 
 
@@ -62,7 +65,9 @@ signals:
 
 public slots:
     void renderTimeout();
+    void onShowBoxToggled(bool checked);
+    void onShowAxesToggled(bool checked);
 
 };
 
-#endif // GEYSERVIEW_H
+#endif // PARTICLEENGINEVIEW_H

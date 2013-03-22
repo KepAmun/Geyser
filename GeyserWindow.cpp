@@ -1,8 +1,7 @@
 
 #include <qgl.h>
 #include "GeyserWindow.h"
-#include "ui_mainwindow.h"
-#include "geyserView.h"
+#include "ui_GeyserWindow.h"
 
 GeyserWindow::GeyserWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,11 +13,11 @@ GeyserWindow::GeyserWindow(QWidget *parent) :
 
     QGLFormat newformat;
     newformat.setSwapInterval(0); // turn off vertical sync
-    m_geyserView = new geyserView(newformat, ui->geyserViewFrame);
+    m_particleEngineView = new ParticleEngineView(newformat, ui->geyserViewFrame);
     layout->setMargin(0);
-    layout->addWidget(m_geyserView, 1);
+    layout->addWidget(m_particleEngineView, 1);
 
-    connect(m_geyserView, SIGNAL(statusUpdated(float, int)), SLOT(onStatusUpdated(float, int)));
+    connect(m_particleEngineView, SIGNAL(statusUpdated(float, int)), SLOT(onStatusUpdated(float, int)));
 
 
     // Connect all spin boxes to update the particle engine when they have been edited.
@@ -48,6 +47,9 @@ GeyserWindow::GeyserWindow(QWidget *parent) :
 
     connect(ui->sizeStartSpinBox, SIGNAL(editingFinished()), SLOT(onEditingFinished()));
     connect(ui->sizeEndSpinBox, SIGNAL(editingFinished()), SLOT(onEditingFinished()));
+
+    connect(ui->showAxesCheckBox, SIGNAL(toggled(bool)), m_particleEngineView, SLOT(onShowAxesToggled(bool)));
+    connect(ui->showBoxCheckBox, SIGNAL(toggled(bool)), m_particleEngineView, SLOT(onShowBoxToggled(bool)));
 }
 
 
@@ -90,7 +92,7 @@ void GeyserWindow::onEditingFinished()
     config.sizeEnd = ui->sizeEndSpinBox->value();
 
 
-    m_geyserView->setConfig(config);
+    m_particleEngineView->setConfig(config);
 }
 
 

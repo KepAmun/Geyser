@@ -5,7 +5,7 @@
 #include <GL/glu.h>
 #include <QTimer>
 
-#include "vector3f.h"
+#include "Vector3f.h"
 
 class Particle
 {

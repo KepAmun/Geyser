@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include "particleengine.h"
-#include "randomhelper.h"
+#include "ParticleEngine.h"
+#include "RandomHelper.h"
 
 const float PI = 2 * acos(0.0f);
 const float DEG_TO_RAD = PI / 180;

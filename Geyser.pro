@@ -16,21 +16,22 @@ INCLUDEPATH += ../GLCommon/
 
 SOURCES += \
     main.cpp\
-    geyserView.cpp \
-    particle.cpp \
-    particleengine.cpp \
     Vector3f.cpp \
     RandomHelper.cpp \
-    GeyserWindow.cpp
+    GeyserWindow.cpp \
+    ParticleEngineView.cpp \
+    ParticleEngine.cpp \
+    Particle.cpp
 
 HEADERS  += \
-    particle.h \
-    particleengine.h \
     Vector3f.h \
     RandomHelper.h \
-    geyserView.h \
-    GeyserWindow.h
+    GeyserWindow.h \
+    Particle.h \
+    ParticleEngine.h \
+    ParticleEngineView.h
 
 
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    GeyserWindow.ui
