@@ -7,6 +7,7 @@
 
 GLUquadric* Particle::m_quadric;
 
+
 Particle::Particle()
 {
     m_creationTime = -1;
@@ -65,14 +66,10 @@ bool Particle::IsDead(qint64 now)
 
 void Particle::Update(qint64 now)
 {
-    qint64 timeDelta  = now - m_lastUpdate;
-
+    float timeRatio = (now - m_lastUpdate)/1000.0f;
     m_lastUpdate = now;
 
-    float timeRatio = ((float)timeDelta/1000);
-
     m_velocity += m_acceleration * timeRatio;
-
     m_position += m_velocity * timeRatio;
 }
 

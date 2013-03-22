@@ -6,16 +6,11 @@
 const float PI = 2 * acos(0.0f);
 const float DEG_TO_RAD = PI / 180;
 
-ParticleEngine::ParticleEngine(void)
+ParticleEngine::ParticleEngine()
 {
     m_startTime = 0;
     m_lastUpdate = 0;
     m_lastSpawn = 0;
-}
-
-
-ParticleEngine::~ParticleEngine(void)
-{
 }
 
 

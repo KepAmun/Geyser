@@ -25,11 +25,6 @@ Vector3f::Vector3f(Vector3f* v)
 }
 
 
-Vector3f::~Vector3f(void)
-{
-}
-
-
 float* Vector3f::Get3fv()
 {
     return m_v;

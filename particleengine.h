@@ -73,8 +73,7 @@ private:
 
 public:
 
-    ParticleEngine(void);
-    ~ParticleEngine(void);
+    ParticleEngine();
 
     void setConfig(Configuration config);
 

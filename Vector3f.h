@@ -9,7 +9,6 @@ public:
     Vector3f(void);
     Vector3f(float x, float y, float z);
     Vector3f(Vector3f* v);
-    ~Vector3f(void);
 
     float* Get3fv();
     float GetX();
