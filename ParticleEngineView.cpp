@@ -31,6 +31,8 @@ ParticleEngineView::ParticleEngineView(QGLFormat format, QWidget *parent) :
     m_elapsedTimer.start();
     m_timer.start(0);
 
+    m_frameCount = 0;
+    m_lastFpsUpdate = 0;
 }
 
 
