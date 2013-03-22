@@ -27,8 +27,9 @@ ParticleEngineView::ParticleEngineView(QGLFormat format, QWidget *parent) :
     m_lastTimer = -1;
 
 
-    UpdateCamPosition();
-    UpdateClicked();
+    updateCamPosition();
+    m_elapsedTimer.start();
+    m_timer.start(0);
 
 }
 
@@ -49,15 +50,6 @@ void ParticleEngineView::resizeGL(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(70, (float)width/height, m_camDistance * 0.05, m_camDistance * 10);
-}
-
-
-void ParticleEngineView::UpdateClicked()
-{
-    m_particleEngine.setConfig(m_config);
-
-    m_elapsedTimer.start();
-    m_timer.start(0);
 }
 
 
@@ -219,13 +211,13 @@ void ParticleEngineView::mouseMoveEvent(QMouseEvent * event)
         m_camTheta = (m_camTheta + (dx * speed));
         m_camPhi = (m_camPhi + (dy * speed));
 
-        UpdateCamPosition();
+        updateCamPosition();
     }
     else if(m_rightButtonDown)
     {
         m_camDistance *= 1 + (dy * speed);
 
-        UpdateCamPosition();
+        updateCamPosition();
     }
 
     m_lastMouseX = event->x();
@@ -252,12 +244,12 @@ void ParticleEngineView::wheelEvent(QWheelEvent * event)
     {
         m_camDistance *= 1 - event->delta() / 1000.0f;
 
-        UpdateCamPosition();
+        updateCamPosition();
     }
 }
 
 
-void ParticleEngineView::UpdateCamPosition()
+void ParticleEngineView::updateCamPosition()
 {
     if(m_camPhi > PI_OVER_TWO * 0.99f)
         m_camPhi = PI_OVER_TWO * 0.99f;

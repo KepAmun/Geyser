@@ -33,9 +33,7 @@ private:
     int m_lastMouseY;
 
 
-    void UpdateClicked();
-
-    void UpdateCamPosition();
+    void updateCamPosition();
 
 
     qint64 m_lastUpdate;
