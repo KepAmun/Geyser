@@ -11,6 +11,9 @@
 using namespace std;
 
 
+const float PI = 2 * acos(0.0f);
+const float DEG_TO_RAD = PI / 180;
+
 
 class ParticleEngine
 {
@@ -30,10 +33,10 @@ public:
 
             speedMin = 20;
             speedMax = 30;
-            thetaMin = 20;
-            thetaMax = 60;
-            phiMin = 60;
-            phiMax = 70;
+            thetaMin = 20 * DEG_TO_RAD;
+            thetaMax = 60 * DEG_TO_RAD;
+            phiMin = 60 * DEG_TO_RAD;
+            phiMax = 70 * DEG_TO_RAD;
 
             acceleration = Vector3f(0,-9.80665,0);
 

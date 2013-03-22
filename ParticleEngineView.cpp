@@ -6,7 +6,6 @@
 #include "ParticleEngineView.h"
 
 
-const double PI = 2 * acos(0.0f);
 const double TWO_PI = 2*PI;
 const double PI_OVER_TWO = PI/2;
 

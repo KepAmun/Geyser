@@ -70,10 +70,10 @@ void GeyserWindow::onEditingFinished()
 
     config.speedMin = ui->speedMinSpinBox->value();
     config.speedMax = ui->speedMaxSpinBox->value();
-    config.thetaMin = ui->thetaMinSpinBox->value();
-    config.thetaMax = ui->thetaMaxSpinBox->value();
-    config.phiMin = ui->phiMinSpinBox->value();
-    config.phiMax = ui->phiMaxSpinBox->value();
+    config.thetaMin = ui->thetaMinSpinBox->value() * DEG_TO_RAD;
+    config.thetaMax = ui->thetaMaxSpinBox->value() * DEG_TO_RAD;
+    config.phiMin = ui->phiMinSpinBox->value() * DEG_TO_RAD;
+    config.phiMax = ui->phiMaxSpinBox->value() * DEG_TO_RAD;
 
     config.acceleration = Vector3f(
                 ui->accelerationXSpinBox->value(),

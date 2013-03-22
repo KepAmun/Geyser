@@ -3,8 +3,6 @@
 #include "ParticleEngine.h"
 #include "RandomHelper.h"
 
-const float PI = 2 * acos(0.0f);
-const float DEG_TO_RAD = PI / 180;
 
 ParticleEngine::ParticleEngine()
 {
@@ -32,8 +30,8 @@ void ParticleEngine::InitParticle(Particle & particle, qint64 now)
 
     float speed = RandomHelper::GetFloat(m_config.speedMin, m_config.speedMax);
 
-    float theta = RandomHelper::GetFloat( m_config.thetaMin, m_config.thetaMax)* DEG_TO_RAD;
-    float phi = RandomHelper::GetFloat( m_config.phiMin, m_config.phiMax)* DEG_TO_RAD;
+    float theta = RandomHelper::GetFloat( m_config.thetaMin, m_config.thetaMax);
+    float phi = RandomHelper::GetFloat( m_config.phiMin, m_config.phiMax);
 
 
     Vector3f velocity(
