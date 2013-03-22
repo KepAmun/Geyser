@@ -219,16 +219,6 @@ void ParticleEngineView::mouseMoveEvent(QMouseEvent * event)
         m_camTheta = (m_camTheta + (dx * speed));
         m_camPhi = (m_camPhi + (dy * speed));
 
-        if(m_camPhi > PI_OVER_TWO * 0.99f)
-            m_camPhi = PI_OVER_TWO * 0.99f;
-        if(m_camPhi < -PI_OVER_TWO * 0.99f)
-            m_camPhi = -PI_OVER_TWO * 0.99f;
-
-        while(m_camTheta > TWO_PI)
-            m_camTheta -= TWO_PI;
-        while(m_camTheta < 0)
-            m_camTheta += TWO_PI;
-
         UpdateCamPosition();
     }
     else if(m_rightButtonDown)
@@ -256,8 +246,36 @@ void ParticleEngineView::mouseReleaseEvent(QMouseEvent * event)
 }
 
 
+void ParticleEngineView::wheelEvent(QWheelEvent * event)
+{
+    if (event->orientation() == Qt::Vertical)
+    {
+        m_camDistance *= 1 - event->delta() / 1000.0f;
+
+        UpdateCamPosition();
+    }
+}
+
+
 void ParticleEngineView::UpdateCamPosition()
 {
+    if(m_camPhi > PI_OVER_TWO * 0.99f)
+        m_camPhi = PI_OVER_TWO * 0.99f;
+    if(m_camPhi < -PI_OVER_TWO * 0.99f)
+        m_camPhi = -PI_OVER_TWO * 0.99f;
+
+    while(m_camTheta > TWO_PI)
+        m_camTheta -= TWO_PI;
+    while(m_camTheta < 0)
+        m_camTheta += TWO_PI;
+
+
+    if(m_camDistance < 10)
+        m_camDistance = 10;
+    else if(m_camDistance > 1000)
+        m_camDistance = 1000;
+
+
     m_camX = m_camDistance * cos(m_camTheta) * cos(m_camPhi);
     m_camY = m_camDistance * sin(m_camPhi);
     m_camZ = m_camDistance * sin(m_camTheta) * cos(m_camPhi);

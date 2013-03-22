@@ -56,9 +56,10 @@ protected:
     void resizeGL(int x, int h);
     void paintGL();
 
-    void mousePressEvent(QMouseEvent * event);
-    void mouseMoveEvent(QMouseEvent *);
-    void mouseReleaseEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent*);
+    void mouseMoveEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*);
+    void wheelEvent(QWheelEvent*);
 
 signals:
     void statusUpdated(float fps, int count);
