@@ -577,7 +577,7 @@
              <item row="3" column="1">
               <widget class="QDoubleSpinBox" name="phiMinSpinBox">
                <property name="wrapping">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="suffix">
                 <string>°</string>
@@ -585,8 +585,11 @@
                <property name="decimals">
                 <number>1</number>
                </property>
+               <property name="minimum">
+                <double>-90.000000000000000</double>
+               </property>
                <property name="maximum">
-                <double>360.000000000000000</double>
+                <double>90.000000000000000</double>
                </property>
                <property name="singleStep">
                 <double>1.000000000000000</double>
@@ -599,7 +602,7 @@
              <item row="3" column="2">
               <widget class="QDoubleSpinBox" name="phiMaxSpinBox">
                <property name="wrapping">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="suffix">
                 <string>°</string>
@@ -607,8 +610,11 @@
                <property name="decimals">
                 <number>1</number>
                </property>
+               <property name="minimum">
+                <double>-90.000000000000000</double>
+               </property>
                <property name="maximum">
-                <double>360.000000000000000</double>
+                <double>90.000000000000000</double>
                </property>
                <property name="value">
                 <double>70.000000000000000</double>
